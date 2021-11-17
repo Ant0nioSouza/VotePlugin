@@ -16,6 +16,9 @@ public class ConfigUtil {
     public String getMessage() {
         return config.getString("voteMessage");
     }
+    public String getWebsite() {
+        return config.getString("voteLink");
+    }
     public List<String> getCommands() {
         System.out.println(config.getString("voteMessage"));
         return config.getStringList("commands");
