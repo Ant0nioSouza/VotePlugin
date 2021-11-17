@@ -8,7 +8,10 @@ public class VotePlugin extends JavaPlugin {
     @Override
     public void onEnable() {
         System.out.println(ChatColor.RED + "VotePlugin initialized!");
+
         this.getServer().getPluginManager().registerEvents(new VoteReceiveEvent(), this);
+
+        saveDefaultConfig();
     }
 
     @Override
