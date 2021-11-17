@@ -1,2 +1,3 @@
 voteMessage: "You voted :) thanks"
 commands: ["kit tools USER","time set day"]
+voteLink: "https://vote-website-here.com/";
