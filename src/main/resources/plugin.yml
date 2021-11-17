@@ -1,3 +1,9 @@
 name: VoteListener
 main: br.com.antoniosouza.VotePlugin
 version: 1.0.0
+author: AntonioSouza
+
+commands:
+  vote:
+    usage: /<vote>
+    description: vote link.
