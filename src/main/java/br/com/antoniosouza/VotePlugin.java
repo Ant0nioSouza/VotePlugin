@@ -1,4 +1,18 @@
 package br.com.antoniosouza;
 
-public class VotePlugin {
+import br.com.antoniosouza.events.VoteReceiveEvent;
+import org.bukkit.ChatColor;
+import org.bukkit.plugin.java.JavaPlugin;
+
+public class VotePlugin extends JavaPlugin {
+    @Override
+    public void onEnable() {
+        System.out.println(ChatColor.RED + "VotePlugin initialized!");
+        this.getServer().getPluginManager().registerEvents(new VoteReceiveEvent(), this);
+    }
+
+    @Override
+    public void onDisable() {
+        System.out.println(ChatColor.RED + "VotePlugin disabled");
+    }
 }
