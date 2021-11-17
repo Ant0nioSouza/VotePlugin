@@ -10,16 +10,14 @@ import java.io.File;
 import java.util.List;
 
 public class ConfigUtil {
-
-    public ConfigUtil(FileConfiguration config) {
-        this.config = config;
-    }
-    FileConfiguration config;
+    private Plugin plugin = VotePlugin.getPlugin(VotePlugin.class);
+    FileConfiguration config = plugin.getConfig();
 
     public String getMessage() {
         return config.getString("voteMessage");
     }
     public List<String> getCommands() {
+        System.out.println(config.getString("voteMessage"));
         return config.getStringList("commands");
     }
 }
