@@ -1,2 +1,2 @@
 voteMessage: "You voted :) thanks"
-commands: ["kit USER tools","time set day 0"]
+commands: ["kit tools USER","time set day"]
