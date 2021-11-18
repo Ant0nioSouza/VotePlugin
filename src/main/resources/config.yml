@@ -1,3 +1,7 @@
 voteMessage: "You voted :) thanks"
 commands: ["kit tools USER","time set day"]
 voteLink: "https://vote-website-here.com/"
+randomItensVote: true
+itensQuantity: 2
+
+randomItensID: ["1:5/64", "1:1/12", "17:1/1", "24:2/98", "38:6/12"]
