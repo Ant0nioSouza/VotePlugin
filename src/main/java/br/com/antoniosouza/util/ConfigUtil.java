@@ -8,6 +8,7 @@ import org.bukkit.plugin.Plugin;
 import org.bukkit.plugin.java.JavaPlugin;
 
 import java.io.File;
+import java.util.ArrayList;
 import java.util.List;
 
 public class ConfigUtil {
@@ -23,7 +24,17 @@ public class ConfigUtil {
     public List<String> getCommands() {
         return config.getStringList("commands");
     }
-    public static List<String> getRandomItens() {
-        return config.getStringList("randomItensID");
+    public static List<String[][]> getRandomItens() {
+        List<String[][]> finalIQ;
+        finalIQ = new ArrayList();
+        List<String> rawIQ = config.getStringList("randomItensID");
+        String[][] itemQuantity = new String[rawIQ.size()][rawIQ.size()];
+        for (int i = 0; i < rawIQ.size(); i ++) {
+            String[] treatedIQ = rawIQ.get(i).split("/");
+            itemQuantity[i][0] = treatedIQ[0];
+            itemQuantity[i][1] = treatedIQ[1];
+            finalIQ.add(itemQuantity);
+        }
+        return finalIQ;
     }
 }
