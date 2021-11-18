@@ -37,4 +37,7 @@ public class ConfigUtil {
         }
         return finalIQ;
     }
+    public static int getHowManyItens() {
+        return config.getInt("itensQuantity");
+    }
 }
