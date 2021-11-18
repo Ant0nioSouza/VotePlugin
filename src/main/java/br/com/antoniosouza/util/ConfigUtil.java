@@ -20,7 +20,6 @@ public class ConfigUtil {
         return config.getString("voteLink");
     }
     public List<String> getCommands() {
-        System.out.println(config.getString("voteMessage"));
         return config.getStringList("commands");
     }
 }
