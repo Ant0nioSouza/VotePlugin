@@ -40,4 +40,7 @@ public class ConfigUtil {
     public static int getHowManyItens() {
         return config.getInt("itensQuantity");
     }
+    public static boolean isRandom() {
+        return config.getBoolean("randomItensVote");
+    }
 }
