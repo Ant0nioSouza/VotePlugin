@@ -1,12 +1,14 @@
 package br.com.antoniosouza.events;
 
 import br.com.antoniosouza.util.ConfigUtil;
+import br.com.antoniosouza.util.RandomConfigItem;
 import com.vexsoftware.votifier.model.VotifierEvent;
 import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.EventPriority;
 import org.bukkit.event.Listener;
+import org.bukkit.inventory.ItemStack;
 
 public class VoteReceiveEvent implements Listener {
     ConfigUtil configUtil = new ConfigUtil();
@@ -14,6 +16,7 @@ public class VoteReceiveEvent implements Listener {
     @EventHandler(priority = EventPriority.HIGH)
     public void onVotifierEvent(VotifierEvent e) {
         Player player = Bukkit.getPlayer(e.getVote().getUsername());
+        ItemStack[] itens = RandomConfigItem.randomIten();
         try {
             if (player.isOnline()) {
                 player.sendMessage(configUtil.getMessage());
@@ -34,6 +37,11 @@ public class VoteReceiveEvent implements Listener {
                         consoleCommand += " " + treatedCommand[i];
                     }
                     Bukkit.getServer().dispatchCommand(Bukkit.getConsoleSender(), consoleCommand);
+                }
+                if (ConfigUtil.isRandom()) {
+                    for (ItemStack item : itens) {
+                        player.getInventory().addItem(item);
+                    }
                 }
             }
         } catch (Exception ex) {
